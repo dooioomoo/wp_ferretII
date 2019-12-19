@@ -1,0 +1,32 @@
+.breadcrumbs[typeof=BreadcrumbList] {
+  margin-bottom: 40px;
+  padding: 10px 20px;
+  background: #f9f9f9;
+  border-radius: $btn-border-radius;
+  display: flex;
+  align-items: center;
+
+  span[property=itemListElement] {
+    margin-right: 30px;
+    position: relative;
+    display: inline-block;
+
+    &:not(:first-child)::before {
+      content: "/";
+      display: block;
+      position: absolute;
+      left: -15px;
+      color: #ddd;
+    }
+  }
+}
+
+.breadcrumb {
+  padding: .5rem 0;
+  background-color: transparent;
+  margin-bottom: 0;
+
+  li.breadcrumb-item {
+    font-size: .875rem;
+  }
+}

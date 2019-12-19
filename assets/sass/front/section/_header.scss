@@ -1,0 +1,31 @@
+.site-header {
+
+}
+
+.site-branding {
+  background: $heading-bg;
+
+  &.sticky {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    border-top: 0;
+  }
+
+  .wrap {
+    padding-top: $heading-top;
+    padding-bottom: $heading-bottom;
+  }
+
+  .site-branding-text {
+    .widget {
+      margin-bottom: 0 !important;
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
