@@ -9,12 +9,6 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <button class="menu-toggle" aria-controls="top-menu" aria-expanded="false">
-                    <?php
-                        echo _ferret_get_svg(array ('icon' => 'bars'));
-                        echo _ferret_get_svg(array ('icon' => 'close'));
-                    ?>
-                </button>
                 <?php wp_nav_menu(array (
                     'theme_location' => 'PrimaryMenu',
                     'menu_id'        => 'primary-menu',

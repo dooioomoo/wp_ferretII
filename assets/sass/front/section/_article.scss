@@ -24,6 +24,9 @@ article {
 
       .entry-title {
         margin: 0;
+        @include media-breakpoint-down(sm) {
+          margin-bottom: 20px;
+        }
 
         a {
 
@@ -109,8 +112,7 @@ article {
   article {
     &.hentry {
       //padding: 40px $grid-gutter-width;
-      padding-top: 40px;
-      padding-bottom: 40px;
+      padding: 40px 0;
     }
   }
 }

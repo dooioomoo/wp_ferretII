@@ -131,7 +131,8 @@ video {
 img.alignleft,
 img.alignright {
   float: none;
-  margin: 0;
+  margin: 20px auto;
+  display: block;
 }
 
 .page-content .wp-smiley,

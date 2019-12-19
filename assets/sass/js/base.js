@@ -130,7 +130,7 @@
     if (!container) {
         return;
     }
-    button = container.getElementsByTagName('button')[0];
+    button = document.getElementById('primary-navi-mobile-button');
 
     if ('undefined' === typeof button) {
         return;

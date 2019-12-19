@@ -17,11 +17,22 @@
   transition: opacity .2s ease-out;
   opacity: 0;
 
-  &:hover{
+  &:hover {
     background: $secondary;
   }
 }
 
 #back-to-top.show {
   opacity: 1;
+}
+
+@include media-breakpoint-down(sm) {
+  #back-to-top {
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 1.5rem;
+    right: 20px;
+    bottom: 30px;
+  }
 }

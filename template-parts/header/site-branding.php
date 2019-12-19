@@ -21,5 +21,11 @@
             </div>
         </div>
     </div><!-- .wrap -->
+    <button id="primary-navi-mobile-button" class="menu-toggle" aria-controls="top-menu" aria-expanded="false">
+        <?php
+            echo _ferret_get_svg(array ('icon' => 'bars'));
+            echo _ferret_get_svg(array ('icon' => 'close'));
+        ?>
+    </button>
     <?php get_template_part('template-parts/navigation/navigation', 'header'); ?>
 </div><!-- .site-branding -->
