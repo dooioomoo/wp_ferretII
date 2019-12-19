@@ -47,6 +47,11 @@ License: GNU General Public License v2 or later
 /*--------------------------------------------------------------
 3.0 Alignments
 --------------------------------------------------------------*/
+.alignnone {
+  margin: 1.5rem auto;
+  display: block;
+}
+
 
 .alignleft {
   display: inline;

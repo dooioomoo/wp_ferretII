@@ -11,7 +11,7 @@
 
     > li {
       border-bottom: 1px solid #f7f7f7;
-      padding: 10px;
+      padding: 10px 0;
 
       ul, ol {
         padding: initial;
@@ -30,7 +30,7 @@
     margin-bottom: 20px;
     box-sizing: border-box;
     margin-top: 0;
-    font-size: 1em;
+    font-size: 1.25em;
     color: #111;
     border-bottom: 2px dashed #eee;
     padding: 15px 0;
@@ -55,7 +55,9 @@
 }
 
 @include media-breakpoint-up(md) {
-  .widget {
-    margin-bottom: 60px;
+  .sidebar-wrap{
+    .widget {
+      margin-bottom: 60px;
+    }
   }
 }

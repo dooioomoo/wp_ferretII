@@ -12,6 +12,7 @@
     top: 0;
     z-index: 100;
     border-top: 0;
+    @include box-shadow(0 1px 2rem rgba($black,.2));
   }
 
   .wrap {
