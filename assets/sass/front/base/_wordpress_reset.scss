@@ -522,3 +522,11 @@ p > object:only-child {
   }
 }
 
+@media screen and (max-width: 30em) {
+  .wp-caption {
+    &.alignright, &.alignleft {
+      float: none;
+      margin: 15px auto;
+    }
+  }
+}
