@@ -1,0 +1,16 @@
+.feature-block {
+  > .wpb_column {
+    > .vc_column-inner {
+      > .wpb_wrapper {
+        @include box-shadow(1px 1px 30px rgba(black, .1));
+        padding: 50px 30px;
+        border-radius: 15px;
+
+      }
+    }
+  }
+
+  .wpb_text_column {
+    margin-bottom: 0;
+  }
+}

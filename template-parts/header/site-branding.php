@@ -10,7 +10,7 @@
     <div class="wrap container">
         <div class="row">
             <div class="site-logo col-md-4">
-                <?php echo _ferret_get_logo(); ?>
+                <?php echo _ferret_get_logo(true); ?>
             </div>
             <div class="col-md-8">
                 <div class="site-branding-text">

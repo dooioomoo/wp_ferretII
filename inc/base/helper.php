@@ -4,8 +4,11 @@
      * @package _ferret
      */
     
-    function _ferret_get_logo() {
-        
+    function _ferret_get_logo($desc = TRUE) {
+        $description = get_bloginfo('description', 'display');
+        if ($description || is_customize_preview()) :
+            $desc_string = '<p class="site-description">' . $description . '</p>';
+        endif;
         if (wp_is_mobile()) {
             if ((is_front_page() || is_home()) && get_theme_mod('custom_logo_sp_frontpage')) {
                 $logo_id = get_theme_mod('custom_logo_sp_frontpage');
@@ -20,18 +23,16 @@
             }
         }
         if (!$logo_id) {
-            $html        = '';
-            $html        .= '<h1 class="site-title">';
-            $html        .= '<a href="';
-            $html        .= esc_url(home_url(''));
-            $html        .= '" rel="home">';
-            $html        .= get_bloginfo('name');
-            $html        .= '</a>';
-            $html        .= '</h1>';
-            $description = get_bloginfo('description', 'display');
-            if ($description || is_customize_preview()) :
-                $html .= '<p class="site-description">' . $description . '</p>';
-            endif;
+            $html = '';
+            $html .= '<h1 class="site-title">';
+            $html .= '<a href="';
+            $html .= esc_url(home_url(''));
+            $html .= '" rel="home">';
+            $html .= get_bloginfo('name');
+            $html .= '</a>';
+            $html .= '</h1>';
+            $html .= $desc_string;
+            
             return $html;
         } else {
             $custom_logo_attr = array (
@@ -46,6 +47,10 @@
                 esc_url(home_url('/')),
                 wp_get_attachment_image($logo_id, 'full', FALSE, $custom_logo_attr)
             );
+            if ($desc) {
+                $html .= $desc_string;
+            }
+            
             return $html;
         }
         return;
