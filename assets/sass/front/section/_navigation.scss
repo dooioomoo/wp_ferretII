@@ -367,14 +367,14 @@
       a {
         display: block;
         padding: 5px 15px;
-        border: 1px solid #f7f7f7;
         margin: 20px 0;
-        background: $primary;
-        color: $white;
-        border-radius: 15px;
+        //border: 1px solid #f7f7f7;
+        //background: $primary;
+        //color: $white;
+        //border-radius: 15px;
 
         &:hover {
-          background: $secondary;
+          //background: $secondary;
         }
       }
     }
