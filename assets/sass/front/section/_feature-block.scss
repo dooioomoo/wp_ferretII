@@ -6,6 +6,14 @@
         padding: 50px 30px;
         border-radius: 15px;
 
+        .vc_icon_element {
+          .vc_icon_element-inner {
+            .vc_icon_element-icon {
+              color: $primary;
+            }
+          }
+        }
+
       }
     }
   }

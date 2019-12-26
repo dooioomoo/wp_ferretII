@@ -11,6 +11,14 @@
     add_action('_ferret_get_sidebar_col', '_ferret_get_sidebar_col');
     add_filter('sanitize_file_name', '_ferret_custom_upload_name', 5, 1);
     add_filter('wpcf7_autop_or_not', '__return_false');
+    add_filter('wpcf7_form_elements', function ($content) {
+        $content = preg_replace('/<label><input type="(checkbox|radio)" name="(.*?)" value="(.*?)" \/><span class="wpcf7-list-item-label">/i', '<label class="custom-control custom-\1 custom-control-inline"><input type="\1" name="\2" value="\3" class="custom-control-input"><span class="wpcf7-list-item-label custom-control-label">', $content);
+        return $content;
+    });
+    add_filter('wpcf7_form_elements', function($content) {
+        $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
+        return $content;
+    });
     /**
      * action's function
      */

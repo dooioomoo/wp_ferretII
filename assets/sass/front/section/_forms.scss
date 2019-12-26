@@ -68,7 +68,7 @@ input[type=submit],
 button {
   display: inline-block;
   font-family: $btn-font-family;
-  font-weight: $btn-font-weight;
+  font-weight: 900;
   color: $body-color;
   text-align: center;
   vertical-align: middle;
@@ -108,4 +108,10 @@ button {
 
 label {
   @extend .col-form-label;
+}
+
+.btn-featrue {
+  .vc_btn3 {
+    font-size: 2rem !important;
+  }
 }
