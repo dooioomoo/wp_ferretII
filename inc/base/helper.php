@@ -1,10 +1,10 @@
 <?php
     /**
-     * _ferret's helps
-     * @package _ferret
+     * nishifunabashihotel's helps
+     * @package nishifunabashihotel
      */
     
-    function _ferret_get_logo($desc = TRUE) {
+    function nishifunabashihotel_get_logo($desc = TRUE) {
         $description = get_bloginfo('description', 'display');
         if ($description || is_customize_preview()) :
             $desc_string = '<p class="site-description">' . $description . '</p>';
@@ -61,7 +61,7 @@
      * chekck any sidebar is avtive
      * @return bool
      */
-    function _ferret_sidebar_is_active() {
+    function nishifunabashihotel_sidebar_is_active() {
         global $wp_registered_sidebars;
         
         foreach ($wp_registered_sidebars as $sidebar) {
@@ -72,10 +72,11 @@
         return FALSE;
     }
     
-    function _ferret_get_all_sidebar() {
+    function nishifunabashihotel_get_all_sidebar() {
         global $wp_registered_sidebars;
         $allsidebar         = array ();
-        $allsidebar['none'] = __('no sidebar', '_ferret');
+        $allsidebar['none'] = __('no sidebar', 'nishifunabashihotel');
+        $allsidebar['default'] = __('page setting', 'nishifunabashihotel');
         foreach ($wp_registered_sidebars as $sidebar) {
             $allsidebar[$sidebar['id']] = $sidebar['name'];
         }
@@ -87,7 +88,7 @@
      * return all post type
      * @return array
      */
-    function _ferret_get_all_posttype() {
+    function nishifunabashihotel_get_all_posttype() {
         
         $checkgroup = array (
             'post',
@@ -111,32 +112,38 @@
     /**
      * Checks to see if we're on the homepage or not.
      */
-    function _ferret_is_frontpage() {
+    function nishifunabashihotel_is_frontpage() {
         return (is_front_page() && !is_home());
     }
     
     /**
      * widget helper
      */
-    if (!function_exists('_ferret_display_widget')):
+    if (!function_exists('nishifunabashihotel_display_widget')):
         
-        function _ferret_display_widget() {
+        function nishifunabashihotel_display_widget() {
             global $post;
-            $val = (!empty($post->ID) and $val = get_post_meta($post->ID, "_ferret_display_post_sidebar", TRUE)) ? $val : get_theme_mod('_ferret_widget_default_view_' . get_post_type(), 'master-sidebar');
-            if ($val != 'none')
-                dynamic_sidebar($val);
+            $val = (!empty($post->ID) and $val = get_post_meta($post->ID, "nishifunabashihotel_display_post_sidebar", TRUE)) ? $val : get_theme_mod('nishifunabashihotel_widget_default_view_' . get_post_type(), 'master-sidebar');
+            $global_val= get_theme_mod("nishifunabashihotel_widget_default_view_".get_post_type(), 'none');
+            if ($global_val =='default'){
+                if ($val != 'none')
+                    dynamic_sidebar($val);
+            }else{
+                dynamic_sidebar($global_val);
+            }
+            
             
         }
     endif;
     
-    if (!function_exists('_ferret_get_widget_col')):
+    if (!function_exists('nishifunabashihotel_get_widget_col')):
         
-        function _ferret_get_widget_col() {
+        function nishifunabashihotel_get_widget_col() {
             global $post;
             if (!empty($post->ID)):
-                $css = get_theme_mod('_ferret_widget_default_order_' . get_post_type(), 'right');
+                $css = get_theme_mod('nishifunabashihotel_widget_default_order_' . get_post_type(), 'right');
             else:
-                $css = get_theme_mod('_ferret_widget_default_order_master', 'right');
+                $css = get_theme_mod('nishifunabashihotel_widget_default_order_master', 'right');
             endif;
             
             if ($css == 'left'):
@@ -149,13 +156,18 @@
         }
     endif;
     
-    if (!function_exists('_ferret_check_widget')):
+    if (!function_exists('nishifunabashihotel_check_widget')):
         
-        function _ferret_check_widget() {
+        function nishifunabashihotel_check_widget() {
             global $post;
-            $val = (!empty($post->ID) and $val = get_post_meta($post->ID, "_ferret_display_post_sidebar", TRUE)) ? $val : get_theme_mod('_ferret_widget_default_view_' . get_post_type(), 'master-sidebar');
+            $global_val= get_theme_mod("nishifunabashihotel_widget_default_view_".get_post_type(), 'none');
+            $val = (!empty($post->ID) and $val = get_post_meta($post->ID, "nishifunabashihotel_display_post_sidebar", TRUE)) ? $val : get_theme_mod('nishifunabashihotel_widget_default_view_' . get_post_type(), 'master-sidebar');
             if ($val != 'none' and $val != 'default'):
-                return TRUE;
+                if ($global_val != 'none'){
+                    return TRUE;
+                }else{
+                    return false;
+                }
             else:
                 return FALSE;
             endif;
