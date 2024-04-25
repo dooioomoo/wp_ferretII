@@ -19,7 +19,7 @@
          * css
          */
         wp_enqueue_style('_ferret-style-common', ___ferret_theme_uri__ . '/assets/css/common.min.css');
-        wp_enqueue_style('_ferret-style-base', ___ferret_theme_uri__ . '/assets/css/app.min.css');
+        wp_enqueue_style('_ferret-style-base', ___ferret_theme_uri__ . '/assets/css/front.css');
         
         //wp_enqueue_style('_ferret-style', get_stylesheet_uri());
         /**
@@ -27,7 +27,7 @@
          */
         
         wp_enqueue_script('_ferret-common-js', ___ferret_theme_uri__ . '/assets/js/common.min.js', array (), ___ferret_theme_ver__, TRUE);
-        wp_enqueue_script('_ferret-navigation-js', ___ferret_theme_uri__ . '/assets/js/app.min.js', array ('jquery'), ___ferret_theme_ver__, TRUE);
+        wp_enqueue_script('_ferret-navigation-js', ___ferret_theme_uri__ . '/assets/js/base.min.js', array ('jquery'), ___ferret_theme_ver__, TRUE);
         wp_dequeue_script('jquery');
         wp_deregister_script('jquery');
         
