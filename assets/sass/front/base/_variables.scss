@@ -1,0 +1,49 @@
+/**
+variables
+ */
+
+
+// type
+
+$global-font-size: 1rem;
+
+$line-height: 1.8;
+
+$heading-top: 1rem;
+$heading-bottom: 1rem;
+$heading-bg: $white;
+// primary navigation
+
+$menubg: $gray-200;
+$submenubg: $primary;
+$menufontsize: 15px;
+$menuhoverbg: $primary;
+$menufontcolor: $primary;
+$menufonthovercolor: $white;
+$menufonthoverbgcolor: $primary;
+$menubuttonsize: 50px;
+$menubuttonradius: $btn-border-radius;
+$submenupadding: 5px 15px;
+$submenulinkcolor: $white;
+$submenuhovercolor: $white;
+$submenuhoverbgcolor: rgba($gray-200, .3);
+
+//container
+$content-main-sidebar-padding-top: 50px;
+$content-main-sidebar-gutter: 50px;
+
+//xzoom
+
+$xzoom-border-width: 1px;
+$xzoom-border-defaultcolor: #f7f7f7;
+$xzoom-zoom-border-width: 10px;
+$xzoom-border-color: $primary;
+$xzoom-preview-border-color: $black;
+$xzoom-caption-fontcolor: #fff;
+
+
+//footer
+
+$footer-background: $secondary;
+$footer-color: $white;
+$footer-link-color: $warning;

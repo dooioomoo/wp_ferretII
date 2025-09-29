@@ -1,0 +1,42 @@
+body, li, p {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 2;
+  word-break: break-all;
+  text-align: justify;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  letter-spacing: 1px !important;
+}
+
+#page.site {
+  overflow: hidden;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, ul, span, li, img {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+:focus {
+  outline: none !important;
+}
+
+a {
+  font-weight: bold;
+  text-decoration: none;
+  @include transition(all .35s ease-in-out);
+
+  &:hover {
+    text-decoration: none;
+    @include transition(all .35s ease-in-out);
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .text-#{$color} .fa {
+    color: $value !important;
+  }
+}

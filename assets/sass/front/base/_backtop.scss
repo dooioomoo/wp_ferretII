@@ -1,0 +1,38 @@
+#back-to-top {
+  position: fixed;
+  bottom: 60px;
+  right: 60px;
+  z-index: 9999;
+  width: 64px;
+  height: 64px;
+  text-align: center;
+  line-height: 64px;
+  background: $primary;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: opacity .2s ease-out;
+  opacity: 0;
+
+  &:hover {
+    background: $secondary;
+  }
+}
+
+#back-to-top.show {
+  opacity: 1;
+}
+
+@include media-breakpoint-down(sm) {
+  #back-to-top {
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 1.5rem;
+    right: 20px;
+    bottom: 30px;
+  }
+}
