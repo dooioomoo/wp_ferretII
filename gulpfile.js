@@ -1,7 +1,6 @@
 "use strict";
 
 import build from './assets/sass/gulpfiles/gulp-require.js';
-// 引入配置
 import setting from './assets/sass/gulpfiles/gulp-settings.js';
 import sassTask from './assets/sass/gulpfiles/gulp-sass.js';
 import jsTask from './assets/sass/gulpfiles/gulp-javascript.js';
