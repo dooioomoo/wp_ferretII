@@ -3,9 +3,10 @@
      * _ferret's helps
      * @package _ferret
      */
-    
+
     function _ferret_get_logo($desc = TRUE) {
         $description = get_bloginfo('description', 'display');
+        $desc_string = "";
         if ($description || is_customize_preview()) :
             $desc_string = '<p class="site-description">' . $description . '</p>';
         endif;
@@ -32,7 +33,7 @@
             $html .= '</a>';
             $html .= '</h1>';
             $html .= $desc_string;
-            
+
             return $html;
         } else {
             $custom_logo_attr = array (
@@ -50,20 +51,20 @@
             if ($desc) {
                 $html .= $desc_string;
             }
-            
+
             return $html;
         }
         return;
     }
-    
-    
+
+
     /**
      * chekck any sidebar is avtive
      * @return bool
      */
     function _ferret_sidebar_is_active() {
         global $wp_registered_sidebars;
-        
+
         foreach ($wp_registered_sidebars as $sidebar) {
             if (is_active_sidebar($sidebar['name']) or is_active_sidebar($sidebar['id'])) {
                 return TRUE;
@@ -71,7 +72,7 @@
         }
         return FALSE;
     }
-    
+
     function _ferret_get_all_sidebar() {
         global $wp_registered_sidebars;
         $allsidebar         = array ();
@@ -81,15 +82,15 @@
             $allsidebar[$sidebar['id']] = $sidebar['name'];
         }
         return $allsidebar;
-        
+
     }
-    
+
     /**
      * return all post type
      * @return array
      */
     function _ferret_get_all_posttype() {
-        
+
         $checkgroup = array (
             'post',
             'page'
@@ -108,19 +109,19 @@
         }
         return $checkgroup;
     }
-    
+
     /**
      * Checks to see if we're on the homepage or not.
      */
     function _ferret_is_frontpage() {
         return (is_front_page() && !is_home());
     }
-    
+
     /**
      * widget helper
      */
     if (!function_exists('_ferret_display_widget')):
-        
+
         function _ferret_display_widget() {
             global $post;
             $val = (!empty($post->ID) and $val = get_post_meta($post->ID, "_ferret_display_post_sidebar", TRUE)) ? $val : get_theme_mod('_ferret_widget_default_view_' . get_post_type(), 'master-sidebar');
@@ -131,13 +132,13 @@
             }else{
                 dynamic_sidebar($global_val);
             }
-            
-            
+
+
         }
     endif;
-    
+
     if (!function_exists('_ferret_get_widget_col')):
-        
+
         function _ferret_get_widget_col() {
             global $post;
             if (!empty($post->ID)):
@@ -145,19 +146,19 @@
             else:
                 $css = get_theme_mod('_ferret_widget_default_order_master', 'right');
             endif;
-            
+
             if ($css == 'left'):
                 $css = 'order-md-3 order-right';
             else:
                 $css = '';
             endif;
-            
+
             return $css;
         }
     endif;
-    
+
     if (!function_exists('_ferret_check_widget')):
-        
+
         function _ferret_check_widget() {
             global $post;
             $global_val= get_theme_mod("_ferret_widget_default_view_".get_post_type(), 'none');
@@ -171,20 +172,20 @@
             else:
                 return FALSE;
             endif;
-            
+
         }
     endif;
-    
+
     if (!function_exists('money_format')) {
         /*
         That it is an implementation of the function money_format for the
         platforms that do not it bear.
-    
+
         The function accepts to same string of format accepts for the
         original function of the PHP.
-    
+
         (Sorry. my writing in English is very bad)
-    
+
         The function is tested using PHP 5.1.4 in Windows XP
         and Apache WebServer.
         */
@@ -313,7 +314,7 @@
                 }
                 return $num . $dec;
             }
-            
+
             if ($curr == "INR") {
                 return formatinr($floatcurr);
             } else {
