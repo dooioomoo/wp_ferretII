@@ -2,38 +2,33 @@
 }
 
 .site-footer {
-  position: relative;
-  padding: 30px 0;
-  background: $footer-background;
-  color: $footer-color;
+	position: relative;
+	padding: 30px 0;
+	background: $footer-background;
+	color: $footer-color;
 
-  a {
-    color: $footer-link-color;
+	a {
+		color: $footer-link-color;
 
-    &:hover {
-      color: $footer-color;
-    }
-  }
+		&:hover {
+			color: $footer-color;
+		}
+	}
 
-  .site-info {
-
-  }
+	.site-info {
+	}
 }
 
-
 @include media-breakpoint-down(md) {
-  .site-footer {
+	.site-footer {
+		a {
+			&:hover {
+			}
+		}
 
-    a {
-
-      &:hover {
-
-      }
-    }
-
-    .site-info {
-      text-align: center;
-      font-size: .875rem;
-    }
-  }
+		.site-info {
+			text-align: center;
+			font-size: 0.875rem;
+		}
+	}
 }

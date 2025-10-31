@@ -64,9 +64,10 @@ export default {
         browsersync.init({
             //在setting修改成真实域名
             proxy: setting.server,
+            port: setting.port,
             //proxy  : setting.server,
             baseDir: setting.root,
-            open: true,
+            open: false,
             notify: false,
         });
         done();
